@@ -1,0 +1,133 @@
+*{
+    margin: 0;  
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url(img/starry-night-sky.jpg);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+h1 {
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+    z-index: 99;
+    text-align: center;
+    top: 25vh;
+    text-shadow: 5px 5px black;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color:#ffffff;
+}
+
+nav{
+    display: flex;
+    background: #1d1d1da1;;
+    justify-content: space-around;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 1.7rem;
+    font-style: unset;
+    color:#ffffff;
+}
+
+@media screen and (max-width: 600px){
+    nav{
+        position: relative;
+        background-color: #141427;
+    }
+    .pagetitle{
+        background-color: #141427;
+        padding: 1vw;
+    }
+    .links{
+        display: none;
+        z-index: 1;
+        position:absolute;
+        background-color: #141427;
+        min-width: 100vw;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .links a{
+        color: #ffffff;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        display: block;
+    }
+    .links a:hover{background-color: #141427;}
+    nav:hover .links{display: block;}
+    nav:hover .pagetitle{background-color: #141427;}
+}
+
+.body{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 90;
+}
+
+#p1{
+    background-image: url(img/planet1.gif);
+    width: 200px;
+    height: 200px;
+    animation: planet1motion 180s infinite;
+}
+
+@keyframes planet1motion{
+    0%{transform: translate(-200px, -200px);}
+    100%{transform: translate(1900px, 200px);}
+}
+
+#galaxy{
+    background-image: url(img/galaxy.gif);
+    width: 100px;
+    height: 100px;
+    animation: galaxymotion 90s linear infinite;
+}
+
+@keyframes galaxymotion {
+    0%{transform: translate(-50%, -50%) rotate(0deg) scale(1);}
+    25%{transform: translate(25vw, -50vh) rotate(90deg) scale(0.1);}
+    50%{transform: translate(50vw, 0) rotate(180deg) scale(1);}
+    75%{transform: translate(25vw, 50vh) rotate(270deg) scale(2);}
+    100%{transform: translate(-50%, -50%) rotate(360deg) scale(1);}
+}
+
+#black_hole{
+    background-image: url(img/black_hole.gif);
+    width: 250px;
+    height: 250px;
+    animation: black_holemotion 180s infinite;
+    top: 100px;
+    left: 17%;
+}
+
+@keyframes black_holemotion{
+    0%{transform: scale(1);}
+    50%{transform: scale(2);}
+    100%{transform: scale(1);}
+}
+
+#lava{
+    background-image: url(img/lava.gif);
+    width: 300px;
+    height: 300px;
+    animation: lavamotion 90s linear infinite;
+    top: 400px;
+    right: 11%;
+}
+
+@keyframes lavamotion{
+    0%{transform: skew(20deg) rotate(0deg);}
+    50%{transform: skew(-20deg) rotate(180deg);}
+    100%{transform: skew(-20deg) rotate(360deg);}
+}
